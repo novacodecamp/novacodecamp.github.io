@@ -8,6 +8,9 @@ body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+body.secondary-page {
+  padding-top: 100px;
+}
 .text-muted {
   color: #777777;
 }
@@ -36,13 +39,13 @@ a.active {
   outline: none;
 }
 a {
-  color: #fed136;
+  color: #af994d;
 }
 a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #fec503;
+  color: #af994d;
 }
 h1,
 h2,
