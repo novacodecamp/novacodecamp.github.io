@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { SessionizeService, Speaker } from '../sessionize-service.service';
+import {
+  SessionizeService,
+  Speaker,
+  Session,
+} from '../sessionize-service.service';
 
 @Component({
   selector: 'app-speaker',
@@ -11,6 +15,8 @@ import { SessionizeService, Speaker } from '../sessionize-service.service';
 export class SpeakerComponentComponent implements OnInit {
   public speakerId: string;
   public speaker: Speaker;
+  public session: Session;
+  public room: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,14 +39,35 @@ export class SpeakerComponentComponent implements OnInit {
         this.speaker = sessionizeApiResult.speakers.find(
           (s) => s.id === speakerId
         );
-        this.titleService.setTitle(`${this.speaker.firstName} ${this.speaker.lastName}`);
+
+        this.session = sessionizeApiResult.sessions.find(
+          (s) =>
+            s.speakers.length === 1 && s.speakers.some((sp) => sp === speakerId)
+        );
+
+        this.room = sessionizeApiResult.rooms.find(
+          (r) => r.id === this.session.roomId
+        ).name;
+
+        this.titleService.setTitle(
+          `${this.speaker.firstName} ${this.speaker.lastName}`
+        );
         this.metaService.addTags([
-          { name: 'description', content: `${this.speaker.firstName} ${this.speaker.lastName}: ${this.speaker.tagLine}` },
+          {
+            name: 'description',
+            content: `${this.speaker.firstName} ${this.speaker.lastName}: ${this.speaker.tagLine}`,
+          },
           { name: 'robots', content: 'index, follow' },
           { name: 'twitter:description', content: `${this.speaker.bio}` },
           { name: 'twitter:image', content: `${this.speaker.profilePicture}` },
         ]);
-        this.metaService.updateTag({ name: 'twitter:title', content: `${this.speaker.firstName} ${this.speaker.lastName}` }, "name='twitter:title'");
+        this.metaService.updateTag(
+          {
+            name: 'twitter:title',
+            content: `${this.speaker.firstName} ${this.speaker.lastName}`,
+          },
+          "name='twitter:title'"
+        );
       });
   }
 }

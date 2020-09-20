@@ -8,6 +8,7 @@ import { PerTrackSpeakersComponent } from './per-track-speakers/per-track-speake
 import { TwitterCardsComponent } from './twitter-cards/twitter-cards.component';
 import { HomeComponent } from './home/home.component';
 import { SpeakerComponentComponent } from './speaker/speaker.component';
+import { TwitterUsernameComponent } from './twitter-username/twitter-username.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SpeakerComponentComponent } from './speaker/speaker.component';
     PerTrackSpeakersComponent,
     TwitterCardsComponent,
     HomeComponent,
-    SpeakerComponentComponent
+    SpeakerComponentComponent,
+    TwitterUsernameComponent
   ],
   imports: [
     BrowserModule,

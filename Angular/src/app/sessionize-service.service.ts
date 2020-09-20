@@ -43,6 +43,13 @@ export interface Speaker {
   bio: string;
   tagLine: string;
   profilePicture: string;
+  links: Link[];
+}
+
+export interface Link {
+  title: string;
+  url: string;
+  linkType: string;
 }
 
 export interface Question {
