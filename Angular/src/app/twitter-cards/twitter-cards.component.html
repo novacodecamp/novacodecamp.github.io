@@ -1,1 +1,19 @@
-<p>twitter-cards works!</p>
+<div *ngIf="sessionizeApiResult">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Tweet</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let speaker of sessionizeApiResult.speakers">
+            <td><a [routerLink]="['/twitter-cards', speaker.id]" routerLinkActive="active">{{speaker.firstName}} {{speaker.lastName}}</a></td>
+            <td>We're proud of our speaker {{speaker.firstName}} {{speaker.lastName}}: {{speaker.tagLine}}.  He'll be speaking on "Adventures in ML and JavaScript" at 9 AM on 9/26.  Register now at https://novacodecamp.org</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="!sessionizeApiResult">
+    Loading...
+</div>

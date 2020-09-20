@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { PerTrackSpeakersComponent } from './per-track-speakers/per-track-speakers.component';
 import { TwitterCardsComponent } from './twitter-cards/twitter-cards.component';
 import { HomeComponent } from './home-component/home-component.component';
+import { SpeakerComponentComponent } from './speaker-component/speaker-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PerTrackSpeakersComponent,
     TwitterCardsComponent,
-    HomeComponent
+    HomeComponent,
+    SpeakerComponentComponent
   ],
   imports: [
     BrowserModule,
