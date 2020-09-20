@@ -1,4 +1,9 @@
-<h1>{{speaker.firstName}} {{speaker.lastName}}</h1>
-<p>{{speaker.tagLine}}</p>
-<img class="speakerImage" [src]="speaker.profilePicture" />
-<p>{{speaker.bio}}</p>
+<div *ngIf="speaker">
+  <h1>{{speaker.firstName}} {{speaker.lastName}}</h1>
+  <p>{{speaker.tagLine}}</p>
+  <img class="speakerImage" [src]="speaker.profilePicture" />
+  <p>{{speaker.bio}}</p>
+</div>
+<div *ngIf="!speaker">
+  Loading...
+</div>
