@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home-component/home-component.component';
+import { HomeComponent } from './home/home.component';
 import { PerTrackSpeakersComponent } from './per-track-speakers/per-track-speakers.component';
-import { SpeakerComponentComponent as SpeakerComponent } from './speaker-component/speaker-component.component';
+import { SpeakerComponentComponent as SpeakerComponent } from './speaker/speaker.component';
 import { TwitterCardsComponent } from './twitter-cards/twitter-cards.component';
 
 const routes: Routes = [

@@ -6,8 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PerTrackSpeakersComponent } from './per-track-speakers/per-track-speakers.component';
 import { TwitterCardsComponent } from './twitter-cards/twitter-cards.component';
-import { HomeComponent } from './home-component/home-component.component';
-import { SpeakerComponentComponent } from './speaker-component/speaker-component.component';
+import { HomeComponent } from './home/home.component';
+import { SpeakerComponentComponent } from './speaker/speaker.component';
 
 @NgModule({
   declarations: [

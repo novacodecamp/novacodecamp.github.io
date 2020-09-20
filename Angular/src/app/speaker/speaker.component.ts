@@ -3,9 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { SessionizeService, Speaker } from '../sessionize-service.service';
 
 @Component({
-  selector: 'app-speaker-component',
-  templateUrl: './speaker-component.component.html',
-  styleUrls: ['./speaker-component.component.scss'],
+  selector: 'app-speaker',
+  templateUrl: './speaker.component.html',
+  styleUrls: ['./speaker.component.scss'],
 })
 export class SpeakerComponentComponent implements OnInit {
   public speakerId: string;
