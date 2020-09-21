@@ -20,7 +20,7 @@ const routes: Routes = [
     component: TwitterCardsComponent,
   },
   {
-    path: 'twitter-cards/:id',
+    path: 'speakers/:id',
     component: SpeakerComponent
   }
 ];

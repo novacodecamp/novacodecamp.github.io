@@ -2,12 +2,14 @@
   <div *ngIf="speaker" class="speaker-card p-4 my-auto">
     <div class="row">
       <div class="col-md-8 align-items-center">
-        <div class="brand"><i class="fa fa-code"></i> Northern VA CodeCamp</div>
+        <a href="https://novacodecamp.org">
+          <div class="brand"><i class="fa fa-code"></i> Northern VA CodeCamp</div>
+        </a>
         <h2>{{session.title}}</h2>
         <p>{{session.description}}</p>
         <div class="session-registration">
           <p>Sept 26 {{session.startsAt | date : 'shortTime'}} EDT, {{room}}</p>
-          <button type=button class="btn btn-small btn-primary">Register Now</button>
+          <a href="https://www.eventbrite.com/e/northern-va-codecamp-fall-2020-tickets-119774387417" class="btn btn-small btn-primary">Register Now, it's Free!</a>
         </div>
       </div>
       <div class="col-md-4 speaker-area">
@@ -16,6 +18,7 @@
         <p>{{speaker.tagLine}}</p>
       </div>
     </div>
+    <p class="speaker-bio">{{speaker.bio}}</p>
   </div>
   <div *ngIf="!speaker">
     Loading...
