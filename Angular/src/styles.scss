@@ -12,3 +12,33 @@ a {
 a:hover {
   color: #fce497;
 }
+.btn-primary {
+  background-color: #fed136;
+  border-color: #fed136;
+  color: #222;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #ffffff;
+  background-color: #fec503;
+  border-color: #f6bf01;
+}
+.btn-link {
+  color: #fed136;
+}
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active,
+.btn-link.active,
+.open .dropdown-toggle.btn-primary {
+  color: #ffffff;
+}
+.brand {
+  color: #fed136;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial;
+  text-transform: uppercase;
+}
+

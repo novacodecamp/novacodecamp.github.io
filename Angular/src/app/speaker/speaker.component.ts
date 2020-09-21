@@ -5,6 +5,7 @@ import {
   SessionizeService,
   Speaker,
   Session,
+  Room,
 } from '../sessionize-service.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class SpeakerComponentComponent implements OnInit {
   public speakerId: string;
   public speaker: Speaker;
   public session: Session;
-  public room: string;
+  public room: Room;
 
   constructor(
     private route: ActivatedRoute,
@@ -47,7 +48,7 @@ export class SpeakerComponentComponent implements OnInit {
 
         this.room = sessionizeApiResult.rooms.find(
           (r) => r.id === this.session.roomId
-        ).name;
+        );
 
         this.titleService.setTitle(
           `${this.speaker.firstName} ${this.speaker.lastName}`

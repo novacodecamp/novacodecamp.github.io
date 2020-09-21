@@ -1,26 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Room, Session, SessionizeApiResult, SessionizeService } from '../sessionize-service.service';
 
 @Component({
-  selector: 'app-per-track-speakers',
-  templateUrl: './per-track-speakers.component.html',
-  styleUrls: ['./per-track-speakers.component.scss']
+  selector: 'app-tracks',
+  templateUrl: './tracks.component.html',
+  styleUrls: ['./tracks.component.scss']
 })
-export class PerTrackSpeakersComponent implements OnInit {
+export class TracksComponent implements OnInit {
   public rooms: Room[] = [];
   public activeRoom: Room = null;
   public sessions: Session[] = [];
 
   private sessionizeApiResult: SessionizeApiResult;
 
-
-  constructor(private sessionizeService: SessionizeService) { }
+  constructor(private sessionizeService: SessionizeService, private route: ActivatedRoute) { }
 
   public ngOnInit(): void {
+    const roomIdStr = this.route.snapshot.paramMap.get('id');
+    const roomId = roomIdStr ? parseInt(roomIdStr, 10) : undefined;
+
     this.sessionizeService.getSessionizeData().subscribe(sessionizeApiResult => {
       this.sessionizeApiResult = sessionizeApiResult;
       this.rooms = sessionizeApiResult.rooms;
-      this.setRoom(this.rooms[this.rooms.length - 1]);
+ 
+      const activeRoom = roomId ? this.rooms.find(r => r.id === roomId) : this.rooms[this.rooms.length - 1];
+      this.setRoom(activeRoom);
     });
   }
 

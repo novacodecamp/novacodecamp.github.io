@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PerTrackSpeakersComponent } from './per-track-speakers.component';
+import { TracksComponent } from './tracks.component';
 
 describe('PerTrackSpeakersComponent', () => {
-  let component: PerTrackSpeakersComponent;
-  let fixture: ComponentFixture<PerTrackSpeakersComponent>;
+  let component: TracksComponent;
+  let fixture: ComponentFixture<TracksComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PerTrackSpeakersComponent ]
+      declarations: [ TracksComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PerTrackSpeakersComponent);
+    fixture = TestBed.createComponent(TracksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

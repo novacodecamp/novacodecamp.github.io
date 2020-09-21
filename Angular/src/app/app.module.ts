@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PerTrackSpeakersComponent } from './per-track-speakers/per-track-speakers.component';
+import { TracksComponent } from './tracks/tracks.component';
 import { TwitterCardsComponent } from './twitter-cards/twitter-cards.component';
 import { HomeComponent } from './home/home.component';
 import { SpeakerComponentComponent } from './speaker/speaker.component';
@@ -13,7 +13,7 @@ import { TwitterUsernameComponent } from './twitter-username/twitter-username.co
 @NgModule({
   declarations: [
     AppComponent,
-    PerTrackSpeakersComponent,
+    TracksComponent,
     TwitterCardsComponent,
     HomeComponent,
     SpeakerComponentComponent,

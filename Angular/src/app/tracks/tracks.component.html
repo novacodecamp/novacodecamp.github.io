@@ -1,0 +1,27 @@
+<a href="https://novacodecamp.org">
+  <div class="brand"><i class="fa fa-code"></i> Northern VA CodeCamp</div>
+</a>
+
+<div class="row m-5" *ngIf="rooms">
+  <div class="col-md-3 text-center" *ngFor="let room of rooms" >
+    <button class="btn" [ngClass]="{'btn-primary': activeRoom.name === room.name, 'btn-link': activeRoom.name !== room.name }" type="button" (click)="setRoom(room)">{{room.name}}</button>
+  </div>
+</div>
+
+<div *ngIf="activeRoom != null">
+  <div *ngFor="let session of sessions">
+    <div class="row session">
+      <div class="col-md-9">
+        <h1 class="time">{{session.startsAt | date : 'shortTime'}}</h1>
+        <h4 class="sessionTitle"><a [routerLink]="['/speakers', session.speaker.id]" routerLinkActive="active">{{session.title}}</a></h4>
+        <p>{{session.description}}</p>
+      </div>
+      <div class="col-md-3">
+        <img class="speakerImage img-fluid w-100" [src]="session.speaker.profilePicture" />
+        <h2>{{session.speaker.firstName}} {{session.speaker.lastName}}</h2>
+        <div class="tagline">{{session.speaker.tagLine}}</div>
+      </div>
+    </div>
+    <hr>
+  </div>
+</div>
