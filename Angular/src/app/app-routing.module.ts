@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { TracksComponent as TracksComponent } from './tracks/tracks.component';
 import { SpeakerComponentComponent as SpeakerComponent } from './speaker/speaker.component';
 import { TwitterCardsComponent } from './twitter-cards/twitter-cards.component';
+import { TransitionScreensComponent } from './transition-screens/transition-screens.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'speakers/:id',
     component: SpeakerComponent
+  },
+  {
+    path: 'transition-screens',
+    component: TransitionScreensComponent
   }
 ];
 

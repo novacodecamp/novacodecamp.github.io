@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { SpeakerComponentComponent } from './speaker/speaker.component';
 import { TwitterUsernameComponent } from './twitter-username/twitter-username.component';
 import { NoVaNavComponent } from './no-va-nav/no-va-nav.component';
+import { TransitionScreensComponent } from './transition-screens/transition-screens.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { NoVaNavComponent } from './no-va-nav/no-va-nav.component';
     HomeComponent,
     SpeakerComponentComponent,
     TwitterUsernameComponent,
-    NoVaNavComponent
+    NoVaNavComponent,
+    TransitionScreensComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

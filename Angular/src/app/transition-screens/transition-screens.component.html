@@ -1,0 +1,32 @@
+<app-no-va-nav></app-no-va-nav>
+
+<div class="container transition-screen">
+  <div class="row h-100">
+    <div class="col-sm-12 my-auto">
+      <div *ngIf="!msgBody" class="msg-picker">
+        <h2>Presets</h2>
+        <button type="button" class="btn btn-primary" (click)="checkBackSoon()">Check Back Soon</button>
+        <button type="button" class="btn btn-primary" (click)="outToLunch()">Out to Lunch</button>
+        <h2>Custom</h2>
+        <form method="post" novalidate (ngSubmit)="showText()">
+          <div class="form-group">
+            <label for="msgTitle">Show this Title</label>
+            <input id="msgTitle" type="text" class="form-control mr-sm-2" name="msgTitle" [(ngModel)]="msgTitleTemp">
+          </div>
+          <div class="form-group">
+            <label for="msgBody">Show this Body</label>
+            <input id="msgBody" type="text" class="form-control mr-sm-2" name="msgBody" [(ngModel)]="msgBodyTemp"
+              placeholder="Enter text here to show it to attendees">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Show It</button>
+          </div>
+        </form>
+      </div>
+      <div *ngIf="msgBody" class="card bg-dark">
+        <div class="card-title">{{msgTitle}}</div>
+        <div class="card-text">{{msgBody}}</div>
+      </div>
+    </div>
+  </div>
+</div>
