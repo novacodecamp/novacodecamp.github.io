@@ -9,6 +9,7 @@ import { TwitterCardsComponent } from './twitter-cards/twitter-cards.component';
 import { HomeComponent } from './home/home.component';
 import { SpeakerComponentComponent } from './speaker/speaker.component';
 import { TwitterUsernameComponent } from './twitter-username/twitter-username.component';
+import { NoVaNavComponent } from './no-va-nav/no-va-nav.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TwitterUsernameComponent } from './twitter-username/twitter-username.co
     TwitterCardsComponent,
     HomeComponent,
     SpeakerComponentComponent,
-    TwitterUsernameComponent
+    TwitterUsernameComponent,
+    NoVaNavComponent
   ],
   imports: [
     BrowserModule,
