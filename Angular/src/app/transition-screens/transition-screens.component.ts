@@ -27,8 +27,18 @@ export class TransitionScreensComponent implements OnInit {
     this.msgBody = 'This track is temporarily closed due to a cataclysmic discussion on tabs vs spaces between the organizers over pizza.  We\'ll be back at ~1 PM EDT.  Rumor is there\'s fun stuff happening in the etc channel.';
   }
 
-  public checkBackSoon(): void {
-    this.msgTitle = 'Check Back Soon';
+  public gettingStarted(): void {
+    this.msgTitle = 'Getting Ready';
+    this.msgBody = 'Booting up.  Need ☕.  Hang tight, we\'ll be with you in a sec';
+  }
+
+  public technicalDifficulties(): void {
+    this.msgTitle = 'Technical Difficulties';
     this.msgBody = 'This track is temporarily paused due to unexpected velociraptor trouble.  Hang tight, unless anyone is unexpectedly eaten we\'ll be back soon.';
+  }
+
+  public reset(): void {
+    this.msgTitle = undefined;
+    this.msgBody = undefined;
   }
 }

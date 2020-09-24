@@ -5,7 +5,8 @@
     <div class="col-sm-12 my-auto">
       <div *ngIf="!msgBody" class="msg-picker">
         <h2>Presets</h2>
-        <button type="button" class="btn btn-primary" (click)="checkBackSoon()">Check Back Soon</button>
+        <button type="button" class="btn btn-primary" (click)="gettingStarted()">Getting Started</button>
+        <button type="button" class="btn btn-primary" (click)="technicalDifficulties()">Technical Difficulties</button>
         <button type="button" class="btn btn-primary" (click)="outToLunch()">Out to Lunch</button>
         <h2>Custom</h2>
         <form method="post" novalidate (ngSubmit)="showText()">
@@ -23,7 +24,7 @@
           </div>
         </form>
       </div>
-      <div *ngIf="msgBody" class="card bg-dark">
+      <div *ngIf="msgBody" class="card bg-dark" (click)="reset()">
         <div class="card-title">{{msgTitle}}</div>
         <div class="card-text">{{msgBody}}</div>
       </div>
