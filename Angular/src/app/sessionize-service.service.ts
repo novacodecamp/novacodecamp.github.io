@@ -29,8 +29,8 @@ export interface Session {
   id: string;
   title: string;
   description: string;
-  startsAt: Date;
-  endsAt: Date;
+  startsAt: string;
+  endsAt: string;
   roomId: number;
   speakers: string[];
   speaker: Speaker;

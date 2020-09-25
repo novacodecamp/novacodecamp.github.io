@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { DateConverterService } from '../date-converter.service';
 import {
   SessionizeService,
   Speaker,
@@ -23,8 +24,13 @@ export class SpeakerComponentComponent implements OnInit {
     private route: ActivatedRoute,
     private sessionizeService: SessionizeService,
     private metaService: Meta,
-    private titleService: Title
+    private titleService: Title,
+    private dateConverterService: DateConverterService
   ) {}
+
+    public toSeconds(startsAt: string): number {
+      return this.dateConverterService.toTime(startsAt);
+    }
 
   ngOnInit(): void {
     const speakerId = this.route.snapshot.paramMap.get('id');

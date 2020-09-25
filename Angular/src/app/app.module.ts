@@ -12,6 +12,8 @@ import { TwitterUsernameComponent } from './twitter-username/twitter-username.co
 import { NoVaNavComponent } from './no-va-nav/no-va-nav.component';
 import { TransitionScreensComponent } from './transition-screens/transition-screens.component';
 import { FormsModule } from '@angular/forms';
+import { NowShowingComponent } from './now-showing/now-showing.component';
+import { SmallSpeakerComponent } from './small-speaker/small-speaker.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     SpeakerComponentComponent,
     TwitterUsernameComponent,
     NoVaNavComponent,
-    TransitionScreensComponent
+    TransitionScreensComponent,
+    NowShowingComponent,
+    SmallSpeakerComponent
   ],
   imports: [
     BrowserModule,

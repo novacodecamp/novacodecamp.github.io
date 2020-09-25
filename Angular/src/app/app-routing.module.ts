@@ -6,6 +6,7 @@ import { TracksComponent as TracksComponent } from './tracks/tracks.component';
 import { SpeakerComponentComponent as SpeakerComponent } from './speaker/speaker.component';
 import { TwitterCardsComponent } from './twitter-cards/twitter-cards.component';
 import { TransitionScreensComponent } from './transition-screens/transition-screens.component';
+import { NowShowingComponent } from './now-showing/now-showing.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'transition-screens',
     component: TransitionScreensComponent
+  },
+  {
+    path: 'now-showing/:date',
+    component: NowShowingComponent
   }
 ];
 

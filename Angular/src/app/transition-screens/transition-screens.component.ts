@@ -24,7 +24,7 @@ export class TransitionScreensComponent implements OnInit {
 
   public outToLunch(): void {
     this.msgTitle = 'Out to Lunch';
-    this.msgBody = 'This track is temporarily closed due to a cataclysmic discussion on tabs vs spaces between the organizers over pizza.  We\'ll be back at ~1 PM EDT.  Rumor is there\'s fun stuff happening in the etc channel.';
+    this.msgBody = 'This track is temporarily closed due to an catastrophic discussion on tabs vs spaces between the organizers over anchovy pizza 🍕.  We\'ll be back at ~1 PM EDT.  Rumor is there\'s fun stuff happening in the /etc channel.';
   }
 
   public gettingStarted(): void {
