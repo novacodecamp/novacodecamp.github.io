@@ -1,12 +1,12 @@
 <app-no-va-nav></app-no-va-nav>
 
 <div class="container">
-  <h1>Home</h1>
-  <a routerLink="/tracks" routerLinkActive="active" class="btn btn-primary m-2">Tracks</a>
-  
-  <h2>Now Showing</h2>
+  <h1>Tracks</h1>
+  <a routerLink="/tracks/15355" routerLinkActive="active" class="btn btn-primary m-2">Web</a>
+  <a routerLink="/tracks/15356" routerLinkActive="active" class="btn btn-primary m-2">Data</a>
+  <a routerLink="/tracks/15357" routerLinkActive="active" class="btn btn-primary m-2">Cloud</a>
+  <a routerLink="/tracks/15358" routerLinkActive="active" class="btn btn-primary m-2">/etc</a>
+
+  <h2>Times</h2>
   <a routerLink="/now-showing/{{hour.getTime()}}" class="btn btn-primary m-2" *ngFor="let hour of hours">{{hour | date : 'shortTime'}}</a>
-  <h2>For Moderators</h2>
-  <a routerLink="/transition-screens" routerLinkActive="active" class="btn btn-primary m-2">Moderator Screens</a>
-  <a routerLink="/twitter-cards" routerLinkActive="active" class="btn btn-primary m-2">Things To Tweet</a>
 </div>
