@@ -28,9 +28,9 @@ export class SpeakerComponentComponent implements OnInit {
     private dateConverterService: DateConverterService
   ) {}
 
-    public toSeconds(startsAt: string): number {
-      return this.dateConverterService.toTime(startsAt);
-    }
+  public toSeconds(startsAt: string): number {
+    return this.dateConverterService.toTime(startsAt);
+  }
 
   ngOnInit(): void {
     const speakerId = this.route.snapshot.paramMap.get('id');

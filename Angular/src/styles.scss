@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+$highlight-color: #fed136;
+
 body {
   background-color: #1a1d21;
   color: #ddd;
@@ -7,14 +9,24 @@ body {
   color: #ddd;
 }
 a {
-  color: #fed136;
+  color: $highlight-color;
+}
+a.subtle-link {
+  color: #fff;
+}
+a.subtle-link:hover {
+  color: $highlight-color;
 }
 a:hover {
   color: #fce497;
 }
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+  background-color: #fec503;
+  border-color: #f6bf01;
+}
 .btn-primary {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: $highlight-color;
+  border-color: $highlight-color;
   color: #222;
 }
 .btn-primary:hover,
@@ -25,9 +37,10 @@ a:hover {
   color: #ffffff;
   background-color: #fec503;
   border-color: #f6bf01;
+  box-shadow: none;
 }
 .btn-link {
-  color: #fed136;
+  color: $highlight-color;
 }
 .btn-link:hover,
 .btn-link:focus,
@@ -37,7 +50,7 @@ a:hover {
   color: #ffffff;
 }
 .brand {
-  color: #fed136;
+  color: $highlight-color;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial;
   text-transform: uppercase;
 }

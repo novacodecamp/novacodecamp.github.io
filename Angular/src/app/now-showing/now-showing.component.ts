@@ -51,6 +51,10 @@ export class NowShowingComponent implements OnInit {
       });
   }
 
+  public setRoom(room: Room): void {
+    this.activeRoom = room;
+  }
+
   private getNextDate(date: Date): Date {
     const nextDate = new Date(date);
     if (date.getMinutes() === 0) {

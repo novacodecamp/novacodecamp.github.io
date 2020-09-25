@@ -3,9 +3,9 @@
 <div class="container">
   <div class="row m-5" *ngIf="rooms">
     <div class="col-md-3 text-center" *ngFor="let room of rooms">
-      <button class="btn"
+      <a [routerLink]="['/tracks', room.id]" class="btn"
         [ngClass]="{'btn-primary': activeRoom.name === room.name, 'btn-link': activeRoom.name !== room.name }"
-        type="button" (click)="setRoom(room)">{{room.name}}</button>
+        type="button">{{room.name}}</a>
     </div>
   </div>
 
@@ -13,7 +13,7 @@
     <div *ngFor="let session of sessions">
       <div class="row session">
         <div class="col-md-9">
-          <h1 class="time">{{session.startsAt | date : 'shortTime'}}</h1>
+          <h1 class="time"><a class="subtle-link" [routerLink]="['/now-showing', toSeconds(session.startsAt) ]">{{session.startsAt | date : 'shortTime'}}</a></h1>
           <h4 class="sessionTitle"><a [routerLink]="['/speakers', session.speaker.id]"
               routerLinkActive="active">{{session.title}}</a></h4>
           <p>{{session.description}}</p>

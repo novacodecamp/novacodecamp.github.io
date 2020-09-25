@@ -18,7 +18,7 @@ const routes: Routes = [
     component: TracksComponent,
   },
   {
-    path: 'tracks/:id?',
+    path: 'tracks/:id',
     component: TracksComponent,
   },
   {
