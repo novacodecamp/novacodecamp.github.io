@@ -8,6 +8,7 @@ import {
   Session,
   Room,
 } from '../sessionize-service.service';
+import { WatchNowService } from '../watch-now.service';
 
 @Component({
   selector: 'app-speaker',
@@ -19,13 +20,15 @@ export class SpeakerComponentComponent implements OnInit {
   public speaker: Speaker;
   public session: Session;
   public room: Room;
+  public watchNowUrl: string;
 
   constructor(
     private route: ActivatedRoute,
     private sessionizeService: SessionizeService,
     private metaService: Meta,
     private titleService: Title,
-    private dateConverterService: DateConverterService
+    private dateConverterService: DateConverterService,
+    private watchNowService: WatchNowService
   ) {}
 
   public toSeconds(startsAt: string): number {
@@ -55,6 +58,7 @@ export class SpeakerComponentComponent implements OnInit {
         this.room = sessionizeApiResult.rooms.find(
           (r) => r.id === this.session.roomId
         );
+        this.watchNowUrl = this.watchNowService.getUrlForRoom(this.room);
 
         this.titleService.setTitle(
           `${this.speaker.firstName} ${this.speaker.lastName}`

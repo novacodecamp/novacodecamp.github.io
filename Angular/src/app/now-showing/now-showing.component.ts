@@ -6,6 +6,7 @@ import {
   Session,
   SessionizeService,
 } from '../sessionize-service.service';
+import { WatchNowService } from '../watch-now.service';
 
 @Component({
   selector: 'app-now-showing',
@@ -23,7 +24,8 @@ export class NowShowingComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private sessionizeService: SessionizeService,
-    private dateConverterService: DateConverterService
+    private dateConverterService: DateConverterService,
+    private watchNowService: WatchNowService
   ) {}
 
   ngOnInit(): void {
@@ -63,6 +65,10 @@ export class NowShowingComponent implements OnInit {
       nextDate.setMinutes(date.getMinutes() + 30);
     }
     return nextDate;
+  }
+
+  public getPlayUrl(room: Room): string {
+    return this.watchNowService.getUrlForRoom(room);
   }
 
   public changeTitle(): void {

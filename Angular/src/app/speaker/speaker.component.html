@@ -11,8 +11,8 @@
           <div class="session-registration">
             <p>Sept 26 <a [routerLink]="['/now-showing', toSeconds(session.startsAt) ]">{{session.startsAt | date : 'shortTime'}}</a> EDT, <a [routerLink]="['/tracks', room.id]"
                 routerLinkActive="active">{{room.name}}</a></p>
-            <a href="https://www.eventbrite.com/e/northern-va-codecamp-fall-2020-tickets-119774387417"
-              class="btn btn-small btn-primary">Register Now, it's Free!</a>
+            <a href="{{watchNowUrl}}" target="_blank" 
+              class="btn btn-small btn-primary">Watch Now</a>
           </div>
         </div>
         <div class="col-md-4 speaker-area">
