@@ -14,6 +14,7 @@ import { TransitionScreensComponent } from './transition-screens/transition-scre
 import { FormsModule } from '@angular/forms';
 import { NowShowingComponent } from './now-showing/now-showing.component';
 import { SmallSpeakerComponent } from './small-speaker/small-speaker.component';
+import { ExportComponent } from './export/export.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SmallSpeakerComponent } from './small-speaker/small-speaker.component';
     NoVaNavComponent,
     TransitionScreensComponent,
     NowShowingComponent,
-    SmallSpeakerComponent
+    SmallSpeakerComponent,
+    ExportComponent
   ],
   imports: [
     BrowserModule,

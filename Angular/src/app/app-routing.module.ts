@@ -7,6 +7,7 @@ import { SpeakerComponentComponent as SpeakerComponent } from './speaker/speaker
 import { TwitterCardsComponent } from './twitter-cards/twitter-cards.component';
 import { TransitionScreensComponent } from './transition-screens/transition-screens.component';
 import { NowShowingComponent } from './now-showing/now-showing.component';
+import { ExportComponent } from './export/export.component';
 
 const routes: Routes = [
   {
@@ -36,7 +37,11 @@ const routes: Routes = [
   {
     path: 'now-showing/:date',
     component: NowShowingComponent
-  }
+  },
+  {
+    path: 'export',
+    component: ExportComponent,
+  },
 ];
 
 @NgModule({
