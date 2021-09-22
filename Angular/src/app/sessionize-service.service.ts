@@ -10,7 +10,7 @@ export class SessionizeService {
   constructor(private http: HttpClient) { }
 
   public getSessionizeData(): Observable<SessionizeApiResult> {
-    const url = 'https://sessionize.com/api/v2/d5qrg1tt/view/All';
+    const url = 'https://sessionize.com/api/v2/n48g0ace/view/All';
     return this.http.get(url).pipe(
       map(res => res as SessionizeApiResult)
     );

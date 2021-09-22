@@ -7,14 +7,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   public hours: Date[] = [];
+  public tracks: Track[] = [
+    {
+      id: 20987,
+      title: 'Web'
+    },
+    {
+      id: 15356,
+      title: 'Data'
+    },
+    {
+      id: 20988,
+      title: 'Cloud'
+    },
+    {
+      id: 20990,
+      title: 'Other'
+    }
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
-    this.hours.push(new Date(2020, 8, 26, 8, 30, 0, 0));
-    for (let i = 9; i <= 16; i++) {
-      this.hours.push(new Date(2020, 8, 26, i, 0, 0, 0));
-    }
+    const year = 2021;
+    const month = 10;
+    const day = 16;
+    const hours2 = [ 
+      [9, 0],
+      [9, 30],
+      [10, 30],
+      [11, 30],
+      [13, 0],
+      [14, 0],
+      [15, 0],
+      [16, 0],
+    ]
+    this.hours = hours2.map(h => 
+      new Date(year, month-1, day, h[0], h[1])
+    );
   }
+}
 
+interface Track {
+  id: number;
+  title: string;
 }
