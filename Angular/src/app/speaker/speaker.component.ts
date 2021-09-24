@@ -21,6 +21,7 @@ export class SpeakerComponentComponent implements OnInit {
   public session: Session;
   public room: Room;
   public watchNowUrl: string;
+  public registrationUrl: string = 'https://www.eventbrite.com/e/northern-va-codecamp-fall-2021-tickets-175887713887';
 
   constructor(
     private route: ActivatedRoute,

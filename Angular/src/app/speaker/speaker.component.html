@@ -11,8 +11,10 @@
           <div class="session-registration">
             <p>Sept 26 <a [routerLink]="['/now-showing', toSeconds(session.startsAt) ]">{{session.startsAt | date : 'shortTime'}}</a> EDT, <a [routerLink]="['/tracks', room.id]"
                 routerLinkActive="active">{{room.name}}</a></p>
+            <a href="{{registrationUrl}}"
+                class="btn btn-small btn-primary" *ngIf="!watchNowUrl">Register Now, it's Free!</a>
             <a href="{{watchNowUrl}}" target="_blank" 
-              class="btn btn-small btn-primary">Watch Now</a>
+              class="btn btn-small btn-primary" *ngIf="watchNowUrl">Watch Now</a>
           </div>
         </div>
         <div class="col-md-4 speaker-area">
