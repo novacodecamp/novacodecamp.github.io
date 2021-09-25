@@ -25,7 +25,9 @@ export class TwitterCardsComponent implements OnInit {
   }
 
   public isMale(speaker: Speaker): boolean {
-    return !(speaker.firstName === 'Milecia' || (speaker.firstName === 'LaBrina'));
+    const firstNames = ['Milecia', 'LaBrina', 'Brittney' ]
+    const anyFemaleFirstName = firstNames.filter(n => n === speaker.firstName);
+    return anyFemaleFirstName.length === 0;
   }
 
 }
