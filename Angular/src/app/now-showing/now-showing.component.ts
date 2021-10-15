@@ -33,6 +33,7 @@ export class NowShowingComponent implements OnInit {
       .getSessionizeData()
       .subscribe((sessionizeApiResult) => {
         this.rooms = sessionizeApiResult.rooms;
+        console.info(this.rooms);
 
         this.route.params.subscribe((params) => {
           this.sessionsByRoom = {};
@@ -68,7 +69,7 @@ export class NowShowingComponent implements OnInit {
   }
 
   public getPlayUrl(room: Room): string {
-    return this.watchNowService.getUrlForRoom(room);
+    return this.watchNowService.getUrlForRoom(room.name);
   }
 
   public changeTitle(): void {

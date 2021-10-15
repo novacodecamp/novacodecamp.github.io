@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WatchNowService } from '../watch-now.service';
 
 @Component({
   selector: 'app-home',
@@ -6,29 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public hours: Date[] = [];
-  public tracks: Track[] = [
-    {
-      id: 20987,
-      title: 'Web'
-    },
-    {
-      id: 15356,
-      title: 'Data'
-    },
-    {
-      id: 20988,
-      title: 'Cloud'
-    },
-    {
-      id: 20990,
-      title: 'Other'
-    }
-  ]
+  constructor(private watchNowService: WatchNowService) { }
 
-  constructor() { }
+  public hours: Date[] = [];
+  public tracks: Track[] = [];
 
   ngOnInit(): void {
+    const trackNames = ['Web', 'Cloud', 'ML', 'Other'];
+    this.tracks = trackNames.map(n => <Track>{
+      title: n,
+      liveUrl: this.watchNowService.getUrlForRoom(n)
+    })
+
     const year = 2021;
     const month = 10;
     const day = 16;
@@ -51,4 +41,5 @@ export class HomeComponent implements OnInit {
 interface Track {
   id: number;
   title: string;
+  liveUrl?: string;
 }
