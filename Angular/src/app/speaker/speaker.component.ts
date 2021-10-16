@@ -59,7 +59,7 @@ export class SpeakerComponentComponent implements OnInit {
         this.room = sessionizeApiResult.rooms.find(
           (r) => r.id === this.session.roomId
         );
-        this.watchNowUrl = this.watchNowService.getUrlForRoom(this.room);
+        this.watchNowUrl = this.watchNowService.getUrlForRoom(this.room.name);
 
         this.titleService.setTitle(
           `${this.speaker.firstName} ${this.speaker.lastName}`
