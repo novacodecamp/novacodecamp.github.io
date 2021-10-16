@@ -6,6 +6,7 @@ import {
   Session,
   SessionizeService,
 } from '../sessionize-service.service';
+import { TrackDataService } from '../track-data.service';
 import { WatchNowService } from '../watch-now.service';
 
 @Component({
@@ -25,7 +26,8 @@ export class NowShowingComponent implements OnInit {
     private route: ActivatedRoute,
     private sessionizeService: SessionizeService,
     private dateConverterService: DateConverterService,
-    private watchNowService: WatchNowService
+    private watchNowService: WatchNowService,
+    private trackDataService: TrackDataService
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +40,8 @@ export class NowShowingComponent implements OnInit {
         this.route.params.subscribe((params) => {
           this.sessionsByRoom = {};
           const dateAsSeconds = parseInt(params.date, 10);
-          this.date = new Date(dateAsSeconds);
+          const dateParam = new Date(dateAsSeconds);
+          this.date = this.getNearestDate(dateParam);
           this.nextDate = this.getNextDate(this.date);
 
           const sessionsAtThisTime = sessionizeApiResult.sessions.filter(
@@ -59,13 +62,13 @@ export class NowShowingComponent implements OnInit {
   }
 
   private getNextDate(date: Date): Date {
-    const nextDate = new Date(date);
-    if (date.getMinutes() === 0) {
-      nextDate.setHours(date.getHours() + 1);
-    } else {
-      nextDate.setMinutes(date.getMinutes() + 30);
-    }
-    return nextDate;
+    return this.trackDataService.getTimes()
+      .filter(t => t > date)[0];
+  }
+
+  private getNearestDate(date: Date): Date {
+    return this.trackDataService.getTimes()
+      .filter(t => t >= date)[0];
   }
 
   public getPlayUrl(room: Room): string {

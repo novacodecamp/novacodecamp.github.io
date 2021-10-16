@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TrackDataService } from '../track-data.service';
 import { WatchNowService } from '../watch-now.service';
 
 @Component({
@@ -7,34 +8,22 @@ import { WatchNowService } from '../watch-now.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private watchNowService: WatchNowService) { }
+  constructor(
+    private watchNowService: WatchNowService, 
+    private trackDataService: TrackDataService
+    ) { }
 
   public hours: Date[] = [];
   public tracks: Track[] = [];
 
   ngOnInit(): void {
-    const trackNames = ['Web', 'Cloud', 'ML', 'Other'];
+    const trackNames = TrackDataService.trackNames;
     this.tracks = trackNames.map(n => <Track>{
       title: n,
       liveUrl: this.watchNowService.getUrlForRoom(n)
     })
 
-    const year = 2021;
-    const month = 10;
-    const day = 16;
-    const hours2 = [ 
-      [9, 0],
-      [9, 30],
-      [10, 30],
-      [11, 30],
-      [13, 0],
-      [14, 0],
-      [15, 0],
-      [16, 0],
-    ]
-    this.hours = hours2.map(h => 
-      new Date(year, month-1, day, h[0], h[1])
-    );
+    this.hours = this.trackDataService.getTimes();
   }
 }
 
