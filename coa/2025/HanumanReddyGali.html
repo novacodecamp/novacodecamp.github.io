@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Appreciation - Northern Virginia Code Camp 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2942 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .certificate-container {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+            border: 3px solid #00b9e8;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 185, 232, 0.3);
+            max-width: 900px;
+            width: 100%;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificate-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 185, 232, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+
+        .logo svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .event-name {
+            font-size: 16px;
+            color: #00b9e8;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .event-name a {
+            color: #00b9e8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .event-name a:hover {
+            color: #ffd42a;
+        }
+
+        .certificate-title {
+            font-size: 48px;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 185, 232, 0.5);
+        }
+
+        .certificate-subtitle {
+            font-size: 20px;
+            color: #ffd42a;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .decorative-line {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00b9e8, #ffd42a, transparent);
+            margin: 30px auto;
+        }
+
+        .body-text {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            color: #a8b2d1;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .recipient-name {
+            font-size: 42px;
+            color: #ffd42a;
+            font-weight: 700;
+            margin: 25px 0;
+            text-shadow: 0 0 15px rgba(255, 212, 42, 0.4);
+        }
+
+        .achievement-text {
+            font-size: 16px;
+            color: #e0e6ed;
+            line-height: 1.8;
+            margin: 25px auto;
+            max-width: 700px;
+            font-weight: 400;
+        }
+
+        .talk-title {
+            color: #00b9e8;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .event-details {
+            color: #ffd42a;
+            font-weight: 500;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .date {
+            font-size: 18px;
+            color: #a8b2d1;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 2px solid;
+        }
+
+        .corner-decoration.top-left {
+            top: 20px;
+            left: 20px;
+            border-right: none;
+            border-bottom: none;
+            border-image: linear-gradient(to bottom right, #00b9e8, transparent) 1;
+        }
+
+        .corner-decoration.top-right {
+            top: 20px;
+            right: 20px;
+            border-left: none;
+            border-bottom: none;
+            border-image: linear-gradient(to bottom left, #ffd42a, transparent) 1;
+        }
+
+        .corner-decoration.bottom-left {
+            bottom: 20px;
+            left: 20px;
+            border-right: none;
+            border-top: none;
+            border-image: linear-gradient(to top right, #00b9e8, transparent) 1;
+        }
+
+        .corner-decoration.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            border-left: none;
+            border-top: none;
+            border-image: linear-gradient(to top left, #ffd42a, transparent) 1;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .certificate-container {
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .certificate-container {
+                padding: 40px 30px;
+            }
+            .certificate-title {
+                font-size: 36px;
+            }
+            .recipient-name {
+                font-size: 32px;
+            }
+            .achievement-text {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate-container">
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+        
+        <div class="content">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Campfire flame -->
+                         Campfire flame
+                        <path d="M100 50 Q90 60 90 75 Q90 90 100 100 Q110 90 110 75 Q110 60 100 50 Z" 
+                              fill="#ffd42a" opacity="0.9">
+                            <animate attributeName="d" 
+                                     values="M100 50 Q90 60 90 75 Q90 90 100 100 Q110 90 110 75 Q110 60 100 50 Z;
+                                            M100 45 Q88 58 88 73 Q88 88 100 100 Q112 88 112 73 Q112 58 100 45 Z;
+                                            M100 50 Q90 60 90 75 Q90 90 100 100 Q110 90 110 75 Q110 60 100 50 Z"
+                                     dur="2s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M100 60 Q95 65 95 75 Q95 85 100 90 Q105 85 105 75 Q105 65 100 60 Z" 
+                              fill="#00b9e8" opacity="0.8">
+                            <animate attributeName="d"
+                                     values="M100 60 Q95 65 95 75 Q95 85 100 90 Q105 85 105 75 Q105 65 100 60 Z;
+                                            M100 58 Q93 64 93 73 Q93 83 100 90 Q107 83 107 73 Q107 64 100 58 Z;
+                                            M100 60 Q95 65 95 75 Q95 85 100 90 Q105 85 105 75 Q105 65 100 60 Z"
+                                     dur="2.5s" repeatCount="indefinite"/>
+                        </path>
+                        
+                        <!-- Code brackets in flame -->
+                        <text x="88" y="80" font-family="monospace" font-size="16" fill="#0d1b2a" font-weight="bold">&lt;/&gt;</text>
+                        
+                        <!-- Logs -->
+                        <ellipse cx="85" cy="110" rx="25" ry="8" fill="#ffd42a" opacity="0.7"/>
+                        <rect x="60" y="105" width="50" height="15" rx="3" fill="#ffd42a" opacity="0.8"/>
+                        
+                        <ellipse cx="115" cy="115" rx="25" ry="8" fill="#00b9e8" opacity="0.7"/>
+                        <rect x="90" y="110" width="50" height="15" rx="3" fill="#00b9e8" opacity="0.8"/>
+                        
+                        <!-- Text -->
+                        <text x="100" y="150" font-family="Montserrat" font-size="14" fill="#00b9e8" 
+                              font-weight="600" text-anchor="middle">NORTHERN VIRGINIA</text>
+                        <text x="100" y="170" font-family="Montserrat" font-size="18" fill="#ffd42a" 
+                              font-weight="700" text-anchor="middle">CODECAMP</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="header">
+                <div class="event-name">
+                    <a href="https://novacodecamp.org/" target="_blank">Northern Virginia Code Camp</a>
+                </div>
+                <h1 class="certificate-title">CERTIFICATE</h1>
+                <div class="certificate-subtitle">of Appreciation</div>
+            </div>
+
+            <div class="decorative-line"></div>
+
+            <div class="body-text">
+                <p class="intro-text">This is to certify that</p>
+                
+                <h2 class="recipient-name">Mr. Hanuman Reddy Gali</h2>
+                
+                <p class="achievement-text">
+                    has delivered the talk <span class="talk-title">"Building Omnichannel Retail Systems: Developer Insights from Modern OMS"</span> 
+                    at the <span class="event-details">Microsoft Building in Reston, Virginia</span>.
+                </p>
+            </div>
+
+            <div class="decorative-line"></div>
+
+            <div class="footer">
+                <p class="date">October 18, 2025</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
